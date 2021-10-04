@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" media="all" href="/assets/application-cfb7d03103b57d8d84af74fec258a7d2902e02ef2ad9642e9c295e630646a2b4.css" data-turbolinks-track="reload" />
+</head>
+
+<body>
+
+<header>
+<h1>スケジュール新規登録</h1>
+</header>
+
+  <%= form_with model: @task do |f| %>
+      <table>
+        <tr>
+          <th><%= f.label :name ,"タイトル" %></th>
+          <td><%= f.text_field :name %></td>
+        </tr>
+ 
+        <tr>
+          <th><%= f.label :startday ,"開始日" %></th>
+          <td><input type="date" name="post[start_at]" id="post_start_at" /></td>
+        </tr>
+ 
+        <tr>
+          <th><%= f.label :endday ,"終了日" %></th>
+          <td><input type="date" name="post[start_at]" id="post_start_at" /></td>
+        </tr>
+        
+        <tr>
+          <th><%= f.label :oneday ,"終日" %></th>
+          <td><input name="post[is_all_day]" type="hidden" value="0" /><input type="checkbox" value="1" name="post[is_all_day]" id="post_is_all_day" />終日の場合はチェックを入れます</td>
+        </tr>
+ 
+        <tr>
+          <th><%= f.label :memo ,"スケジュールメモ" %></th>
+          <td><textarea class="posts-content" name="post[memo]" id="post_memo">
+              </textarea></td>
+        </tr>
+      </table>
+ 
+      <div>
+        <ul>
+            <li><input type="submit" name="commit" value="スケジュールを新規登録する" data-disable-with="スケジュールを新規登録する" /></li>
+            <li><a href="/tasks">スケジュール一覧に戻る</a></li>
+        </ul>
+      </div>
+    <% end %>
+    
+    </body>
+    
+    </html>
